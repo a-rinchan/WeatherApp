@@ -321,11 +321,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/waterTextView"
+        android:id="@+id/windTextView"
         android:layout_width="78dp"
         android:layout_height="78dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/water"
+        android:background="@drawable/wind"
         android:gravity="center"
         android:textColor="@color/textColor"
         android:textSize="@dimen/regularText"
@@ -359,7 +359,7 @@
         android:gravity="center"
         android:textColor="@color/textColor"
         android:textSize="@dimen/regularText"
-        app:layout_constraintEnd_toStartOf="@+id/waterTextView"
+        app:layout_constraintEnd_toStartOf="@+id/windTextView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/pressureTextView"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
