@@ -22,7 +22,7 @@
         android:id="@+id/locationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/notosansjp_bold"
         android:text="@string/locationText"
         android:textColor="@color/textColor"
@@ -75,7 +75,6 @@
         android:id="@+id/highTempTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:textColor="@color/highTemp"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/CenterGuideline"
@@ -88,7 +87,6 @@
         android:id="@+id/slash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="@string/slash"
         android:textColor="@color/textColor"
         android:textSize="24sp"
@@ -101,7 +99,6 @@
         android:id="@+id/lowTempTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:textColor="@color/lowTemp"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/CenterGuideline"
@@ -115,7 +112,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/rightGuideline"
@@ -382,6 +379,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.55" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
