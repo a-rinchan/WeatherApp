@@ -60,6 +60,8 @@ class MainActivity : AppCompatActivity() {
                     getString(R.string.permission_alert),
                     Toast.LENGTH_LONG
                 ).show()
+            } else {
+                getLastLocation()
             }
         }
     }
