@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+
+    <!-- メイン画面 -->
     <string name="locationText">現在地</string>
     <string name="slash">/</string>
     <string name="text6h">6</string>
@@ -10,10 +12,17 @@
     <string name="text21h">21</string>
     <string name="text24h">24</string>
     <string name="text3h">3</string>
-    <string name="spinnerText">表示地域の追加</string>
-    <string name="listText">現在の表示地域</string>
     <string name="permission_alert">位置情報が許可されていないため、現在地の天気を取得できません</string>
     <string name="failed_getlocation">位置情報を取得できませんでした</string>
+    <string name="high_temp">H %d ℃</string>
+    <string name="low_temp">L %d ℃</string>
+    <string name="temp">%d℃</string>
+
+    <!-- 入力画面 -->
+    <string name="spinnerText">表示地域の追加</string>
+    <string name="listText">現在の表示地域</string>
+
+    <!-- OpenWeatherMap API -->
     <string name="base_url">https://api.openweathermap.org/</string>
     <string name="api_key">API_KEY</string>
 </resources>
