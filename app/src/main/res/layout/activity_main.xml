@@ -14,7 +14,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.15"
+        app:layout_constraintGuide_percent="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:id="@+id/locationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/notosansjp_bold"
         android:text="@string/locationText"
         android:textColor="@color/textColor"
@@ -75,7 +75,6 @@
         android:id="@+id/highTempTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:textColor="@color/highTemp"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/CenterGuideline"
@@ -88,7 +87,6 @@
         android:id="@+id/slash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="@string/slash"
         android:textColor="@color/textColor"
         android:textSize="24sp"
@@ -101,7 +99,6 @@
         android:id="@+id/lowTempTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:textColor="@color/lowTemp"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/CenterGuideline"
@@ -113,19 +110,20 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/rightGuideline"
-        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
         app:layout_constraintTop_toTopOf="@+id/CenterGuideline"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -142,13 +140,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="8dp"
                 android:src="@drawable/tenki01" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -165,13 +163,13 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
                 android:src="@drawable/tenki02" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -188,13 +186,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
                 android:src="@drawable/tenki03" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -211,13 +209,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
                 android:src="@drawable/tenki04" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -234,13 +232,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
                 android:src="@drawable/tenki09" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -257,13 +255,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
                 android:src="@drawable/tenki10" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -280,13 +278,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
                 android:src="@drawable/tenki11" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -303,7 +301,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
                 android:src="@drawable/tenki13" />
         </LinearLayout>
 
@@ -316,16 +313,16 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.85"
+        app:layout_constraintGuide_percent="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/waterTextView"
+        android:id="@+id/windTextView"
         android:layout_width="78dp"
         android:layout_height="78dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/water"
+        android:background="@drawable/wind"
         android:gravity="center"
         android:textColor="@color/textColor"
         android:textSize="@dimen/regularText"
@@ -359,7 +356,7 @@
         android:gravity="center"
         android:textColor="@color/textColor"
         android:textSize="@dimen/regularText"
-        app:layout_constraintEnd_toStartOf="@+id/waterTextView"
+        app:layout_constraintEnd_toStartOf="@+id/windTextView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/pressureTextView"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -369,8 +366,8 @@
         android:id="@+id/inputButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@null"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -382,6 +379,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.55" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
