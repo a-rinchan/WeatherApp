@@ -5,13 +5,21 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-class MainViewModel(application: Application,lat: Double, lon: Double) : AndroidViewModel(application) {
+/*
+ * タイトル : MainViewModel
+ * 説明 : MainActivityのViewModel
+ *
+ * @author : 吉澤彩花
+ */
 
-    val weatherLatLonRepository = WeatherLatLonRepository(lat, lon, baseUrl(), apiKey())
+class MainViewModel(application: Application,lat: Double, lon: Double) : AndroidViewModel(application) {
 
     companion object {
         private const val KELVIN = -273.15
     }
+
+    //天気取得
+    val weatherLatLonRepository = WeatherLatLonRepository(lat, lon, baseUrl(), apiKey())
 
     //都市名
     private val _location = MutableLiveData<String>()
