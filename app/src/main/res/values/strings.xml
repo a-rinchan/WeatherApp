@@ -17,6 +17,7 @@
     <string name="high_temp">H %d ℃</string>
     <string name="low_temp">L %d ℃</string>
     <string name="temp">%d℃</string>
+    <string name="input_button">地域入力画面へ進む</string>
 
     <!-- 入力画面 -->
     <string name="spinnerText">表示地域の追加</string>
