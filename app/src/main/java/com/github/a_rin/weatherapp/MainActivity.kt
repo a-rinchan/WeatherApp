@@ -1,12 +1,16 @@
 package com.github.a_rin.weatherapp
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
+import com.github.a_rin.weatherapp.databinding.ActivityMainBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
@@ -21,6 +25,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
+    private lateinit var viewModel: MainViewModel
+
+    private lateinit var mainViewModelFactory: MainViewModelFactory
+
     ///位置情報を取得するためのパーミッションリクエストコード
     private val PERMISSIONS_REQUEST_CODE: Int = 100
 
@@ -29,18 +39,45 @@ class MainActivity : AppCompatActivity() {
     private var location: Location? = null
 
     ///現在位置の緯度と経度
-    private var latitude: Double? = null
-    private var longitude: Double? = null
+    private var latitude: Double = 35.6895
+    private var longitude: Double = 139.6917
+
+    //初回起動関連
+    private lateinit var preference: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         val locationRequest = LocationRequest()
         locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY)
 
-        confirmPermission()
+        //プリファレンスの準備
+        preference = getSharedPreferences("Preference Name", MODE_PRIVATE)
+        editor = preference.edit()
+
+
+        if (preference.getBoolean("Launched", false) == false) {
+            //初回起動時の処理
+            confirmPermission()
+
+            //プリファレンスの書き変え
+            editor.putBoolean("Launched", true)
+            editor.commit()
+        } else {
+            //二回目以降の処理
+            getLastLocation()
+        }
+
+        mainViewModelFactory = MainViewModelFactory(application, latitude, longitude)
+        viewModel = ViewModelProviders.of(this, mainViewModelFactory).get(MainViewModel::class.java)
+
+        // DataBindingのViewModelを設定
+        binding.mainViewModel = viewModel
+
+        binding.lifecycleOwner = this
 
         inputButton.setOnClickListener {
             val intent = Intent(this, InputActivity::class.java)
@@ -97,8 +134,8 @@ class MainActivity : AppCompatActivity() {
             if (task.isSuccessful && task.result != null) {
                 location = task.result
 
-                latitude = location?.latitude
-                longitude = location?.latitude
+                latitude = location?.latitude ?: 35.6895
+                longitude = location?.latitude ?: 139.6917
             } else {
                 Toast.makeText(
                     applicationContext,
@@ -107,5 +144,11 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        viewModel.getWeather()
     }
 }
